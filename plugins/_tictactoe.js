@@ -24,10 +24,10 @@ handler.before = function (m) {
         }))
         if (!isSurrender && 1 > (ok = room.game.turn(m.sender === room.game.playerO, parseInt(m.text) - 1))) {
             m.reply({
-                '-3': 'Game telah berakhir',
-                '-2': 'Invalid',
-                '-1': 'Posisi Invalid',
-                0: 'Posisi Invalid',
+                '-3': '𝙀𝙡 𝙟𝙪𝙚𝙜𝙤 𝙝𝙖 𝙩𝙚𝙧𝙢𝙞𝙣𝙖𝙙𝙤',
+                '-2': '𝙄𝙣𝙫𝙖𝙡𝙞𝙙𝙤',
+                '-1': '𝙋𝙤𝙨𝙞𝙘𝙞𝙤𝙣 𝙞𝙣𝙫𝙖𝙡𝙞𝙙𝙖',
+                0: '𝙋𝙤𝙨𝙞𝙘𝙞𝙤𝙣 𝙞𝙣𝙫𝙖𝙡𝙞𝙙𝙖',
             }[ok])
             return !0
         }
@@ -57,12 +57,12 @@ handler.before = function (m) {
 ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
-${isWin ? `@${winner.split('@')[0]} Menang! (+${winScore} XP)` : isTie ? `Game berakhir (+${playScore} XP)` : `Giliran ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}
+${isWin ? `@${winner.split('@')[0]} 𝙂𝙖𝙣𝙤! (+${winScore} XP)` : isTie ? `𝙅𝙪𝙚𝙜𝙤 𝙩𝙚𝙧𝙞𝙣𝙤 (+${playScore} XP)` : `𝙜𝙞𝙧𝙤 ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}
 
 ❌: @${room.game.playerX.split('@')[0]}
 ⭕: @${room.game.playerO.split('@')[0]}
-Ketik *nyerah* untuk nyerah
-Room ID: ${room.id}
+𝙀𝙨𝙘𝙧𝙞𝙗𝙖 *𝙧𝙚𝙣𝙪𝙣𝙘𝙞𝙖𝙧* 𝙥𝙖𝙧𝙖 𝙙𝙖𝙧𝙨𝙚 𝙥𝙤𝙧 𝙫𝙚𝙣𝙘𝙞𝙙𝙤
+𝙄𝘿: ${room.id}
 `.trim()
         let users = global.db.data.users
         if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
