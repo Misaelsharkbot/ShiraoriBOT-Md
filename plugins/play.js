@@ -25,13 +25,13 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
       m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nmencoba server lain...'}`)
     }
   }
-  if (yt === false) throw 'semua server gagal'
-  if (yt2 === false) throw 'semua server gagal'
+  if (yt === false) throw 'todos los servidores fallan'
+  if (yt2 === false) throw 'todos los servidores fallan'
   let { dl_link, thumb, title, filesize, filesizeF } = yt
 let anu =  `
-*Judul:* ${title}
-*Ukuran File Audio:* ${filesizeF}
-*Ukuran File Video:* ${yt2.filesizeF}
+*𝚃𝙸𝚃𝚄𝙻𝙾:* ${title}
+*𝚃𝙰𝙼𝙰Ñ𝙾 𝙴𝙽 𝙰𝚄𝙳𝙸𝙾:* ${filesizeF}
+*𝚃𝙰𝙼𝙰Ñ𝙾 𝙴𝙽 𝚅𝙸𝙳𝙴𝙾:* ${yt2.filesizeF}
 *Server y2mate:* ${usedServer}
 *link sumber:* 
 ${vid.url}
@@ -47,20 +47,20 @@ ${vid.url}
            hydratedButtons: [{
              urlButton: {
                displayText: 'DONASI',
-               url: 'https://saweria.co/ilmanhdyt',
+               url: 'A',
              }
 
            },
                {
              quickReplyButton: {
-               displayText: 'video',
+               displayText: '𝚅𝙸𝙳𝙴𝙾',
                id: `.ytmp4 ${vid.url}`,
              }
 
             },
                {
              quickReplyButton: {
-               displayText: 'Audio',
+               displayText: '𝙰𝚄𝙳𝙸𝙾',
                id: `.ytmp3 ${vid.url}`,
              }
 
@@ -77,7 +77,7 @@ ${vid.url}
 }
 handler.help = ['play'].map(v => v + ' <pencarian>')
 handler.tags = ['downloader']
-handler.command = /^(p|play)$/i
+handler.command = /^(play2|play)$/i
 
 handler.exp = 0
 
