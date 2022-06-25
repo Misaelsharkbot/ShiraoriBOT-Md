@@ -3,9 +3,7 @@ handler.before = m => {
     let user = global.db.data.users[m.sender]
     if (user.afk > -1) {
         m.reply(`
-*[⚠] 𝘿𝙀𝙅𝘼𝙎𝙏𝙀 𝘿𝙀 𝙀𝙎𝙏𝘼𝙍 𝙀𝙉 𝘼𝙁𝙆 ${user.afkReason ? 
-                
-' 𝙈𝙊𝙏𝙄𝙑𝙊 ' + user.afkReason : ''}*
+*[⚠] 𝘿𝙀𝙅𝘼𝙎𝙏𝙀 𝘿𝙀 𝙀𝙎𝙏𝘼𝙍 𝙀𝙉 𝘼𝙁𝙆 ${user.afkReason ? ' 𝙈𝙊𝙏𝙄𝙑𝙊: ' + user.afkReason : '𝙈𝙊𝙏𝙄𝙑𝙊: Sin motivo'}*
 *𝙏𝙄𝙀𝙈𝙋𝙊 𝘿𝙀 𝙄𝙉𝘼𝘾𝙏𝙄𝙑𝙊 ${clockString(new Date - user.afk)}*
 `.trim())
         user.afk = -1
